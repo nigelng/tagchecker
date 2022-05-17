@@ -1,0 +1,6 @@
+{
+  "extends": "@nigelng/eslint-config-base",
+  "env": {
+    "node": true
+  }
+}

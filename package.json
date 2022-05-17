@@ -1,0 +1,50 @@
+{
+  "name": "@nigelng/tagchecker",
+  "version": "1.0.0",
+  "author": "Nigel Nguyen <nigel@nng.me>",
+  "license": "UNLICENCE",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:nigelng/tagchecker.git"
+  },
+  "packageManager": "yarn@3.2.1",
+  "engines": {
+    "node": ">= 16"
+  },
+  "scripts": {
+    "clean": "rimraf -rf lib",
+    "lint": "eslint --fix src/**",
+    "pretest": "yarn lint",
+    "test": "cross-env NODE_PATH=./src jest --config .jestrc.json",
+    "prebuild": "yarn clean",
+    "build": "babel src -d dist",
+    "postinstall": "husky install",
+    "prepack": "pinst --disable",
+    "postpack": "pinst --enable",
+    "debug": "cross-env NODE_PATH=./src ./node_modules/.bin/nodemon --exec babel-node --inspect=9220 src/index",
+    "start": "NODE_PATH=./dist NODE_ENV=production node dist"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.17.10",
+    "@babel/node": "^7.17.10",
+    "@babel/preset-env": "^7.17.10",
+    "@nigelng/eslint-config-base": "^1.0.0",
+    "@nigelng/prettier-config": "^1.0.0",
+    "babel-preset-minify": "^0.5.2",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.15.0",
+    "husky": "^8.0.0",
+    "jest": "^28.1.0",
+    "lint-staged": "^12.4.1",
+    "nodemon": "^2.0.16",
+    "pinst": "^3.0.0",
+    "prettier": "^2.6.2",
+    "rimraf": "^3.0.2"
+  },
+  "dependencies": {
+    "pino": "^7.11.0",
+    "pino-pretty": "^7.6.1",
+    "ramda": "^0.28.0"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "cacheDirectory": "tmp/jest/",
+  "collectCoverage": true,
+  "collectCoverageFrom": [
+    "src/**/*.js"
+  ],
+  "coverageReporters": [
+    "json",
+    "lcov",
+    "text"
+  ],
+  "verbose": true,
+  "unmockedModulePathPatterns": [
+    "<rootDir>/node_modules"
+  ],
+  "testMatch": [
+    "**/tests/**/?(*.)+(spec|test).js?(x)"
+  ],
+  "setupFiles": [
+    "<rootDir>/tests/setup.js"
+  ]
+}
